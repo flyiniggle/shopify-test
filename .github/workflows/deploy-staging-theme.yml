@@ -1,0 +1,19 @@
+name: Deploy Shopify Staging Theme
+on:
+  push:
+    branches: [ master ]
+  workflow_dispatch:
+
+jobs:
+  shopify:
+    name: Shopify
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Shopify
+        uses: pgrimaud/action-shopify@master
+        env:
+          SHOPIFY_PASSWORD: ${{ secrets.SHOPIFY_APP_API_KEY }}
+          SHOPIFY_STORE_URL: ${{ secrets.STORE }}
+          SHOPIFY_THEME_ID: ${{ secrets.STAGING_THEME_ID }}
+          THEME_PATH: ${{ secrets.THEME_PATH }}
