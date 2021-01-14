@@ -1,0 +1,14 @@
+development:
+  password: ${APP_API_KEY}
+  theme_id: ${STAGING_THEME_ID}
+  store: ${STORE}
+
+staging:
+  password: ${APP_API_KEY}
+  theme_id: ${STAGING_THEME_ID}
+  store: ${STORE}
+
+production:
+  password: ${APP_API_KEY}
+  theme_id: ${PRODUCTION_THEME_ID}
+  store: ${STORE}
